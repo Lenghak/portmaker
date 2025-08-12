@@ -1,0 +1,21 @@
+{
+  "name": "lenghak",
+  "type": "module",
+  "private": true,
+  "devDependencies": {
+    "@biomejs/biome": "2.1.2",
+    "@nx/js": "21.3.11",
+    "@types/bun": "latest",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.1.5",
+    "ultracite": "5.1.2"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,json,jsonc,css,scss,md,mdx}": [
+      "npx ultracite format"
+    ]
+  }
+}
