@@ -1,0 +1,11 @@
+{
+  "extends": ["./base.json"],
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "jsxImportSource": "@builder.io/qwik",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "types": ["vite/client", "@builder.io/qwik"]
+  },
+  "exclude": ["dist", "node_modules", "build", "**/*.test.*", "**/*.spec.*"]
+}

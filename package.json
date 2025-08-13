@@ -12,11 +12,19 @@
     "typescript": "^5.9.2"
   },
   "scripts": {
-    "format": "bun x ultracite format"
+    "format": "ultracite format",
+    "format:unsafe": "ultracite format --unsafe",
+    "lint": "ultracite lint",
+    "format:check": "ultracite format --dry-run",
+    "lint:check": "ultracite lint --dry-run",
+    "type-check": "turbo run type-check",
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "clean": "turbo run clean"
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx,json,jsonc,css,scss,md,mdx}": [
-      "bun format"
+    "*.{js,jsx,ts,tsx,astro,vue,svelte,json,jsonc,css,scss,md,mdx}": [
+      "ultracite format"
     ]
   },
   "dependencies": {

@@ -1,0 +1,25 @@
+{
+  "name": "@packages/typescript",
+  "version": "1.0.0",
+  "description": "Shared TypeScript configuration for the Lenghak monorepo",
+  "main": "index.js",
+  "files": [
+    "base.json",
+    "react-library.json",
+    "astro.json",
+    "react.json",
+    "vue.json",
+    "svelte.json",
+    "qwik.json",
+    "solid.json",
+    "preact.json",
+    "preact-library.json"
+  ],
+  "keywords": [
+    "typescript",
+    "config",
+    "monorepo"
+  ],
+  "author": "Lenghak",
+  "license": "MIT"
+}

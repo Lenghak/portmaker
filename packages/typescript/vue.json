@@ -1,0 +1,11 @@
+{
+  "extends": ["./base.json"],
+  "compilerOptions": {
+    "jsx": "preserve",
+    "jsxImportSource": "vue",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "types": ["vite/client", "vue"]
+  },
+  "exclude": ["dist", "node_modules", "build", "**/*.test.*", "**/*.spec.*"]
+}
