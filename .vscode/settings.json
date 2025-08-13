@@ -24,14 +24,8 @@
     "*.ndjson": "jsonl",
     "*.sqlbook": "sql"
   },
-  "tailwindCSS.classFunctions": [
-    "cva",
-    "cn",
-    "twMerge"
-  ],
-  "typescript.preferences.autoImportSpecifierExcludeRegexes": [
-    "^(node:)?os$"
-  ],
+  "tailwindCSS.classFunctions": ["cva", "cn", "twMerge"],
+  "typescript.preferences.autoImportSpecifierExcludeRegexes": ["^(node:)?os$"],
   "terminal.integrated.profiles.osx": {
     "zsh with nvm": {
       "path": "/bin/zsh",
@@ -42,20 +36,14 @@
     },
     "bash with nvm": {
       "path": "/bin/bash",
-      "args": [
-        "-c",
-        "source ~/.nvm/nvm.sh && nvm use && exec /bin/bash"
-      ]
+      "args": ["-c", "source ~/.nvm/nvm.sh && nvm use && exec /bin/bash"]
     }
   },
   "terminal.integrated.defaultProfile.osx": "zsh with nvm",
   "terminal.integrated.profiles.linux": {
     "bash with nvm": {
       "path": "/bin/bash",
-      "args": [
-        "-c",
-        "source ~/.nvm/nvm.sh && nvm use && exec /bin/bash"
-      ]
+      "args": ["-c", "source ~/.nvm/nvm.sh && nvm use && exec /bin/bash"]
     },
     "zsh with nvm": {
       "path": "/bin/zsh",

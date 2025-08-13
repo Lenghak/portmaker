@@ -1,21 +1,26 @@
 {
   "name": "lenghak",
-  "type": "module",
   "private": true,
   "devDependencies": {
-    "@biomejs/biome": "2.1.2",
-    "@nx/js": "21.3.11",
+    "@biomejs/biome": "^2.1.4",
     "@types/bun": "latest",
     "husky": "^9.1.7",
     "lint-staged": "^16.1.5",
-    "ultracite": "5.1.2"
+    "ultracite": "^5.1.2"
   },
   "peerDependencies": {
-    "typescript": "^5"
+    "typescript": "^5.9.2"
+  },
+  "scripts": {
+    "format": "bun x ultracite format"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx,json,jsonc,css,scss,md,mdx}": [
-      "npx ultracite format"
+      "bun format"
     ]
-  }
+  },
+  "dependencies": {
+    "turbo": "^2.5.5"
+  },
+  "packageManager": "pnpm@10.14.0+sha512.ad27a79641b49c3e481a16a805baa71817a04bbe06a38d17e60e2eaee83f6a146c6a688125f5792e48dd5ba30e7da52a5cda4c3992b9ccf333f9ce223af84748"
 }
