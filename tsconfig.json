@@ -6,6 +6,5 @@
       "@monorepo/*": ["./packages/*/src"]
     }
   },
-  "include": ["packages/*/src/**/*", "apps/*/src/**/*"],
   "exclude": ["node_modules", "dist", "packages/*/dist", "apps/*/dist"]
 }

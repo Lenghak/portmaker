@@ -1,5 +1,5 @@
 {
-  "name": "@lenghak/web",
+  "name": "@portmaker/web",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
@@ -14,14 +14,27 @@
   },
   "dependencies": {
     "@astrojs/react": "^4.3.0",
-    "@types/react": "^19.1.10",
-    "@types/react-dom": "^19.1.7",
+    "@astrojs/solid-js": "^5.1.0",
+    "@astrojs/svelte": "^7.1.0",
+    "@astrojs/vue": "^5.1.0",
+    "@tailwindcss/vite": "^4.1.11",
+    "@tanstack/react-form": "^1.19.1",
+    "@tanstack/solid-form": "^1.19.1",
+    "@tanstack/svelte-form": "^1.19.1",
+    "@tanstack/vue-form": "^1.19.1",
     "astro": "^5.12.9",
+    "astro-typesafe-routes": "^5.0.0",
     "react": "^19.1.1",
-    "react-dom": "^19.1.1"
+    "react-dom": "^19.1.1",
+    "solid-js": "^1.9.9",
+    "svelte": "^5.38.1",
+    "tailwindcss": "^4.1.11",
+    "vue": "^3.5.18"
   },
   "devDependencies": {
     "@packages/typescript": "workspace:*",
+    "@types/react": "^19.1.10",
+    "@types/react-dom": "^19.1.7",
     "typescript": "^5.9.2"
   }
 }
