@@ -18,6 +18,10 @@ This directory contains comprehensive documentation for the Lenghak monorepo set
 - **[preact-react19-compatibility-guide.md](./preact-react19-compatibility-guide.md)** - Complete guide for Preact with React 19 compatibility, performance benefits, and migration strategies
 - **[preact-quick-reference.md](./preact-quick-reference.md)** - Quick setup and usage reference for Preact
 
+### 🎨 Development Experience
+
+- **[pre-commit-hooks-guide.md](./pre-commit-hooks-guide.md)** - Colorful and meaningful pre-commit hooks with enhanced developer experience
+
 ### 📋 Rules & Guidelines
 
 - **[../rules/ultracite.mdc](../rules/ultracite.mdc)** - Ultracite rules and coding standards
@@ -52,6 +56,16 @@ pnpm format:check
 - `packages/typescript/svelte.json` - Svelte-specific config
 - `packages/typescript/qwik.json` - Qwik-specific config
 - `packages/typescript/solid.json` - Solid-specific config
+
+### Pre-commit Hooks
+
+```bash
+# Test the colorful pre-commit output
+./scripts/test-pre-commit.sh
+
+# Use enhanced pre-commit hook
+cp .husky/pre-commit-enhanced .husky/pre-commit
+```
 
 ### Supported Frameworks
 
