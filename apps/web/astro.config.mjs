@@ -1,3 +1,4 @@
+import path from 'node:path';
 import react from '@astrojs/react';
 import solidJs from '@astrojs/solid-js';
 import svelte from '@astrojs/svelte';
@@ -11,5 +12,8 @@ export default defineConfig({
   integrations: [react(), vue(), svelte(), solidJs(), typesafeRoutes()],
   vite: {
     plugins: [tailwindcss()],
+    alias: {
+      '@': path.resolve(path.dirname("./src")),
+    },
   },
 });

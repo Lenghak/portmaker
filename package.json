@@ -1,35 +1,24 @@
 {
   "name": "@lenghak/portmaker",
-  "private": true,
+  "dependencies": {
+    "turbo": "^2.5.5"
+  },
   "devDependencies": {
-    "@biomejs/biome": "^2.1.4",
+    "@biomejs/biome": "^2.2.0",
     "husky": "^9.1.7",
     "lint-staged": "^16.1.5",
-    "ultracite": "^5.1.2"
-  },
-  "peerDependencies": {
-    "typescript": "^5.9.2"
-  },
-  "scripts": {
-    "format": "ultracite format",
-    "format:unsafe": "ultracite format --unsafe",
-    "lint": "ultracite lint",
-    "format:check": "ultracite format --dry-run",
-    "lint:check": "ultracite lint --dry-run",
-    "type-check": "turbo run type-check",
-    "build": "turbo run build",
-    "dev": "turbo run dev",
-    "clean": "turbo run clean"
+    "syncpack": "14.0.0-alpha.19",
+    "ultracite": "^5.1.5"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx,astro,vue,svelte,json,jsonc,css,scss,md,mdx}": [
       "ultracite format"
     ]
   },
-  "dependencies": {
-    "turbo": "^2.5.5"
-  },
   "packageManager": "pnpm@10.14.0+sha512.ad27a79641b49c3e481a16a805baa71817a04bbe06a38d17e60e2eaee83f6a146c6a688125f5792e48dd5ba30e7da52a5cda4c3992b9ccf333f9ce223af84748",
+  "peerDependencies": {
+    "typescript": "^5.9.2"
+  },
   "pnpm": {
     "overrides": {
       "vite": "npm:rolldown-vite@latest"
@@ -38,5 +27,17 @@
       "esbuild",
       "vue-demi"
     ]
+  },
+  "private": true,
+  "scripts": {
+    "build": "turbo run build",
+    "clean": "turbo run clean",
+    "dev": "turbo run dev",
+    "format": "biome format",
+    "format:check": "biome format --dry-run",
+    "format:unsafe": "biome format --unsafe",
+    "lint": "biome lint",
+    "lint:check": "biome lint --dry-run",
+    "type-check": "turbo run type-check"
   }
 }

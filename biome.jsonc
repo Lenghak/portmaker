@@ -2,6 +2,14 @@
   "$schema": "https://biomejs.dev/schemas/latest/schema.json",
   "extends": ["ultracite"],
   "formatter": {
-    "attributePosition": "multiline"
+    "attributePosition": "multiline",
+    "includes": ["!**/package.json"]
+  },
+  "linter": {
+    "rules": {
+      "suspicious": {
+        "noUnknownAtRules": "off"
+      }
+    }
   }
 }

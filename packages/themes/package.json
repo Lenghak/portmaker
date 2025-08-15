@@ -1,0 +1,17 @@
+{
+  "name": "@packages/themes",
+  "version": "0.0.1",
+  "dependencies": {
+    "tailwindcss": "^4.1.12",
+    "tw-animate-css": "^1.3.6"
+  },
+  "exports": {
+    "./global.css": "./src/global.css"
+  },
+  "peerDependencies": {
+    "tailwindcss": "^4.1.11",
+    "tw-animate-css": "^1.3.6"
+  },
+  "private": true,
+  "type": "module"
+}
