@@ -9,7 +9,15 @@ import typesafeRoutes from 'astro-typesafe-routes';
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [react(), vue(), svelte(), solidJs(), typesafeRoutes()],
+  integrations: [react({
+    include: ["@packages/react"]
+  }), vue({
+    include: ["@packages/vue"]
+  }), svelte({
+    include: ["@packages/svelte"]
+  }), solidJs({
+    include: ["@packages/solid"]
+  }), typesafeRoutes()],
   vite: {
     plugins: [tailwindcss()],
     alias: {

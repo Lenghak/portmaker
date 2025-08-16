@@ -1,0 +1,10 @@
+{
+  "extends": "@packages/typescript/react.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@packages/react": ["src/*"]
+    }
+  },
+  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.js", "src/**/*.jsx"]
+}

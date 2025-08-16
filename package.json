@@ -1,14 +1,14 @@
 {
   "name": "@lenghak/portmaker",
   "dependencies": {
-    "turbo": "^2.5.5"
+    "turbo": "^2.5.6"
   },
   "devDependencies": {
     "@biomejs/biome": "^2.2.0",
     "husky": "^9.1.7",
     "lint-staged": "^16.1.5",
     "syncpack": "14.0.0-alpha.19",
-    "ultracite": "^5.1.5"
+    "ultracite": "^5.1.8"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx,astro,vue,svelte,json,jsonc,css,scss,md,mdx}": [
