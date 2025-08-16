@@ -5,13 +5,21 @@
   },
   "devDependencies": {
     "@biomejs/biome": "^2.2.0",
+    "@prettier/plugin-xml": "^3.4.2",
     "husky": "^9.1.7",
     "lint-staged": "^16.1.5",
+    "prettier": "^3.6.2",
+    "prettier-plugin-astro": "^0.14.1",
+    "prettier-plugin-svelte": "^3.4.0",
+    "prettier-plugin-tailwindcss": "^0.6.14",
     "syncpack": "14.0.0-alpha.19",
     "ultracite": "^5.1.8"
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx,astro,vue,svelte,json,jsonc,css,scss,md,mdx}": [
+    "*.{astro,vue,svelte}": [
+      "prettier --write"
+    ],
+    "*.{js,jsx,ts,tsx,json,jsonc,css,scss,md,mdx}": [
       "ultracite format"
     ]
   },
@@ -33,11 +41,14 @@
     "build": "turbo run build",
     "clean": "turbo run clean",
     "dev": "turbo run dev",
-    "format": "biome format",
-    "format:check": "biome format --dry-run",
-    "format:unsafe": "biome format --unsafe",
-    "lint": "biome lint",
-    "lint:check": "biome lint --dry-run",
-    "type-check": "turbo run type-check"
+    "format": "ultracite format",
+    "format:check": "ultracite format --dry-run",
+    "format:unsafe": "ultracite format --unsafe",
+    "lint": "ultracite lint",
+    "lint:check": "ultracite lint --dry-run",
+    "type-check": "turbo run type-check",
+    "prettier": "prettier --write .",
+    "prettier:check": "prettier --check .",
+    "prettier:format": "prettier --write \"**/*.{astro,vue,svelte,ts,tsx,js,jsx,json,jsonc,css,scss,md,mdx}\""
   }
 }

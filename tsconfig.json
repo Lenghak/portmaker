@@ -4,7 +4,8 @@
     "baseUrl": ".",
     "paths": {
       "@monorepo/*": ["./packages/*/src"]
-    }
+    },
+    "strictNullChecks": true
   },
   "exclude": ["node_modules", "dist", "packages/*/dist", "apps/*/dist"]
 }
