@@ -1,4 +1,4 @@
-import { cn } from "@packages/react/lib"
+import { cn } from "@packages/utils/cn"
 import { CaretDownIcon } from "@phosphor-icons/react/CaretDown"
 import { Content, Header, Item, Root, Trigger } from "@radix-ui/react-accordion"
 import type React from "react"
