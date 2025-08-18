@@ -15,11 +15,7 @@
     "preact.json",
     "preact-library.json"
   ],
-  "keywords": [
-    "config",
-    "monorepo",
-    "typescript"
-  ],
+  "keywords": ["config", "monorepo", "typescript"],
   "license": "MIT",
   "main": "index.js"
 }

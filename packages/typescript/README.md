@@ -1,18 +1,25 @@
 # @packages/typescript
 
-Shared TypeScript configuration for the Lenghak monorepo supporting multiple frameworks.
+Shared TypeScript configuration for the Lenghak monorepo supporting multiple
+frameworks.
 
 ## 📚 Documentation
 
 For comprehensive documentation, see:
-- **[Ultracite Setup Guide](../../.cursor/docs/ultracite-astro-multi-framework-setup.md)** - Complete guide for Ultracite with Astro and multiple frameworks
-- **[Configuration Summary](../../.cursor/docs/ultracite-configuration-summary.md)** - Summary of current setup and features
-- **[Preact React 19 Guide](../../.cursor/docs/preact-react19-compatibility-guide.md)** - Preact with React 19 compatibility
-- **[Monorepo Architecture](../../.cursor/docs/README.md)** - Overview of all documentation
+
+- **[Ultracite Setup Guide](../../.cursor/docs/ultracite-astro-multi-framework-setup.md)** -
+  Complete guide for Ultracite with Astro and multiple frameworks
+- **[Configuration Summary](../../.cursor/docs/ultracite-configuration-summary.md)** -
+  Summary of current setup and features
+- **[Preact React 19 Guide](../../.cursor/docs/preact-react19-compatibility-guide.md)** -
+  Preact with React 19 compatibility
+- **[Monorepo Architecture](../../.cursor/docs/README.md)** - Overview of all
+  documentation
 
 ## Usage
 
 ### Base Configuration
+
 ```json
 {
   "extends": "@packages/typescript/base.json"
@@ -20,6 +27,7 @@ For comprehensive documentation, see:
 ```
 
 ### Astro Projects (Multi-Framework Support)
+
 ```json
 {
   "extends": "@packages/typescript/astro.json"
@@ -27,6 +35,7 @@ For comprehensive documentation, see:
 ```
 
 ### React Libraries
+
 ```json
 {
   "extends": "@packages/typescript/react-library.json"
@@ -34,6 +43,7 @@ For comprehensive documentation, see:
 ```
 
 ### React Projects
+
 ```json
 {
   "extends": "@packages/typescript/react.json"
@@ -41,6 +51,7 @@ For comprehensive documentation, see:
 ```
 
 ### Preact Projects (React 19 Compatible)
+
 ```json
 {
   "extends": "@packages/typescript/preact.json"
@@ -48,6 +59,7 @@ For comprehensive documentation, see:
 ```
 
 ### Preact Libraries
+
 ```json
 {
   "extends": "@packages/typescript/preact-library.json"
@@ -55,6 +67,7 @@ For comprehensive documentation, see:
 ```
 
 ### Vue Projects
+
 ```json
 {
   "extends": "@packages/typescript/vue.json"
@@ -62,6 +75,7 @@ For comprehensive documentation, see:
 ```
 
 ### Svelte Projects
+
 ```json
 {
   "extends": "@packages/typescript/svelte.json"
@@ -69,6 +83,7 @@ For comprehensive documentation, see:
 ```
 
 ### Qwik Projects
+
 ```json
 {
   "extends": "@packages/typescript/qwik.json"
@@ -76,6 +91,7 @@ For comprehensive documentation, see:
 ```
 
 ### Solid Projects
+
 ```json
 {
   "extends": "@packages/typescript/solid.json"
@@ -112,4 +128,5 @@ For comprehensive documentation, see:
 3. **Format your code**: Run `pnpm format` to format all files
 4. **Check types**: Run `pnpm type-check` to verify TypeScript
 
-For detailed setup instructions, see the [Ultracite Setup Guide](../../.cursor/docs/ultracite-astro-multi-framework-setup.md).
+For detailed setup instructions, see the
+[Ultracite Setup Guide](../../.cursor/docs/ultracite-astro-multi-framework-setup.md).

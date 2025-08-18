@@ -1,0 +1,26 @@
+{
+  "categories": {
+    "correctness": "error",
+    "suspicious": "warn"
+  },
+  "ignorePatterns": [
+    "node_modules/",
+    "dist/",
+    "build/",
+    ".astro/",
+    ".turbo/",
+    ".next/",
+    ".nuxt/",
+    ".output/",
+    "coverage/",
+    "**/.vercel/**",
+    "**/dist/**",
+    "**/build/**",
+    "**/.astro/**",
+    "**/.turbo/**",
+    "**/.next/**",
+    "**/.nuxt/**",
+    "**/.output/**",
+    "**/coverage/**"
+  ]
+}

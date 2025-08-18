@@ -1,3 +1,4 @@
 @import "../../node_modules/@packages/themes/global.css";
 
 @source "../../node_modules/@packages/react";
+@source "../../node_modules/@packages/astro";

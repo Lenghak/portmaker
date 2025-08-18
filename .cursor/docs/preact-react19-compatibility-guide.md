@@ -2,13 +2,16 @@
 
 ## What is Preact?
 
-Preact is a lightweight alternative to React that maintains API compatibility while being significantly smaller (3KB vs 45KB). It's designed to be a drop-in replacement for React in most cases.
+Preact is a lightweight alternative to React that maintains API compatibility
+while being significantly smaller (3KB vs 45KB). It's designed to be a drop-in
+replacement for React in most cases.
 
 ## Preact with React 19 Compatibility
 
 ### Key Features
 
-1. **React API Compatibility**: Preact implements the React API, making it compatible with React 19
+1. **React API Compatibility**: Preact implements the React API, making it
+   compatible with React 19
 2. **Smaller Bundle Size**: 3KB vs React's 45KB
 3. **Better Performance**: Faster rendering and smaller memory footprint
 4. **Same JSX Syntax**: Uses the same JSX syntax as React
@@ -18,6 +21,7 @@ Preact is a lightweight alternative to React that maintains API compatibility wh
 ### React 19 Compatibility Status
 
 ✅ **Fully Compatible Features:**
+
 - JSX syntax and components
 - React hooks (useState, useEffect, useContext, etc.)
 - React 19's new features (use, useOptimistic, useTransition)
@@ -27,6 +31,7 @@ Preact is a lightweight alternative to React that maintains API compatibility wh
 - Suspense
 
 ⚠️ **Minor Differences:**
+
 - Some internal implementation details
 - Event handling (Preact uses native events)
 - Synthetic events (Preact uses native events)
@@ -36,6 +41,7 @@ Preact is a lightweight alternative to React that maintains API compatibility wh
 ### TypeScript Configuration
 
 #### Preact Application
+
 ```json
 {
   "extends": "@packages/typescript/preact.json"
@@ -43,6 +49,7 @@ Preact is a lightweight alternative to React that maintains API compatibility wh
 ```
 
 #### Preact Library
+
 ```json
 {
   "extends": "@packages/typescript/preact-library.json"
@@ -67,9 +74,10 @@ Preact is a lightweight alternative to React that maintains API compatibility wh
 ## Usage Examples
 
 ### Basic Component
+
 ```tsx
 // src/components/PreactComponent.tsx
-import { useState, useEffect } from 'preact/hooks';
+import { useState, useEffect } from "preact/hooks";
 
 interface Props {
   title: string;
@@ -77,26 +85,25 @@ interface Props {
 
 export default function PreactComponent({ title }: Props) {
   const [count, setCount] = useState(0);
-  
+
   useEffect(() => {
     document.title = `${title} - Count: ${count}`;
   }, [title, count]);
-  
+
   return (
     <div>
       <h2>{title}</h2>
-      <button onClick={() => setCount(count + 1)}>
-        Count: {count}
-      </button>
+      <button onClick={() => setCount(count + 1)}>Count: {count}</button>
     </div>
   );
 }
 ```
 
 ### Using React 19 Features
+
 ```tsx
 // src/components/React19Features.tsx
-import { use, useOptimistic, useTransition } from 'preact/hooks';
+import { use, useOptimistic, useTransition } from "preact/hooks";
 
 interface User {
   id: string;
@@ -106,7 +113,7 @@ interface User {
 // Using React 19's 'use' hook
 function UserProfile({ userPromise }: { userPromise: Promise<User> }) {
   const user = use(userPromise);
-  
+
   return <div>Hello, {user.name}!</div>;
 }
 
@@ -117,17 +124,17 @@ function TodoList() {
     todos,
     (state, newTodo: string) => [...state, newTodo]
   );
-  
+
   const [isPending, startTransition] = useTransition();
-  
+
   const addTodo = async (todo: string) => {
     addOptimisticTodo(todo);
     startTransition(async () => {
       await saveTodo(todo);
-      setTodos(prev => [...prev, todo]);
+      setTodos((prev) => [...prev, todo]);
     });
   };
-  
+
   return (
     <div>
       {optimisticTodos.map((todo, index) => (
@@ -141,24 +148,29 @@ function TodoList() {
 ```
 
 ### Context and Hooks
+
 ```tsx
 // src/context/ThemeContext.tsx
-import { createContext, useContext, useState } from 'preact/hooks';
+import { createContext, useContext, useState } from "preact/hooks";
 
 interface ThemeContextType {
-  theme: 'light' | 'dark';
+  theme: "light" | "dark";
   toggleTheme: () => void;
 }
 
 const ThemeContext = createContext<ThemeContextType | null>(null);
 
-export function ThemeProvider({ children }: { children: preact.ComponentChildren }) {
-  const [theme, setTheme] = useState<'light' | 'dark'>('light');
-  
+export function ThemeProvider({
+  children,
+}: {
+  children: preact.ComponentChildren;
+}) {
+  const [theme, setTheme] = useState<"light" | "dark">("light");
+
   const toggleTheme = () => {
-    setTheme(prev => prev === 'light' ? 'dark' : 'light');
+    setTheme((prev) => (prev === "light" ? "dark" : "light"));
   };
-  
+
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
       {children}
@@ -169,7 +181,7 @@ export function ThemeProvider({ children }: { children: preact.ComponentChildren
 export function useTheme() {
   const context = useContext(ThemeContext);
   if (!context) {
-    throw new Error('useTheme must be used within a ThemeProvider');
+    throw new Error("useTheme must be used within a ThemeProvider");
   }
   return context;
 }
@@ -178,26 +190,28 @@ export function useTheme() {
 ## Astro Integration
 
 ### Astro Configuration
+
 ```typescript
 // astro.config.mjs
-import { defineConfig } from 'astro/config';
-import preact from '@astrojs/preact';
+import { defineConfig } from "astro/config";
+import preact from "@astrojs/preact";
 
 export default defineConfig({
   integrations: [
     preact({
-      include: ['**/*.{tsx,jsx}'],
-      exclude: ['**/*.react.{tsx,jsx}'] // Exclude React-specific files
-    })
-  ]
+      include: ["**/*.{tsx,jsx}"],
+      exclude: ["**/*.react.{tsx,jsx}"], // Exclude React-specific files
+    }),
+  ],
 });
 ```
 
 ### Using Preact Components in Astro
+
 ```astro
 ---
 // src/pages/index.astro
-import PreactComponent from '../components/PreactComponent';
+import PreactComponent from "../components/PreactComponent";
 ---
 
 <html lang="en">
@@ -213,6 +227,7 @@ import PreactComponent from '../components/PreactComponent';
 ## Package.json Dependencies
 
 ### For Preact Applications
+
 ```json
 {
   "dependencies": {
@@ -227,6 +242,7 @@ import PreactComponent from '../components/PreactComponent';
 ```
 
 ### For Preact Libraries
+
 ```json
 {
   "dependencies": {
@@ -244,56 +260,61 @@ import PreactComponent from '../components/PreactComponent';
 ## Build Configuration
 
 ### Vite Configuration
+
 ```typescript
 // vite.config.ts
-import { defineConfig } from 'vite';
-import preact from '@preact/preset-vite';
+import { defineConfig } from "vite";
+import preact from "@preact/preset-vite";
 
 export default defineConfig({
   plugins: [preact()],
   resolve: {
     alias: {
-      'react': 'preact/compat',
-      'react-dom': 'preact/compat'
-    }
-  }
+      react: "preact/compat",
+      "react-dom": "preact/compat",
+    },
+  },
 });
 ```
 
 ### Rollup Configuration
+
 ```javascript
 // rollup.config.js
-import preact from '@preact/preset-vite';
+import preact from "@preact/preset-vite";
 
 export default {
   plugins: [preact()],
-  external: ['preact'],
+  external: ["preact"],
   output: {
     globals: {
-      preact: 'Preact'
-    }
-  }
+      preact: "Preact",
+    },
+  },
 };
 ```
 
 ## Migration from React
 
 ### 1. Install Preact
+
 ```bash
 pnpm add preact
 pnpm add -D @preact/preset-vite @types/preact
 ```
 
 ### 2. Update Imports
+
 ```tsx
 // Before (React)
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 
 // After (Preact)
-import { useState, useEffect } from 'preact/hooks';
+import { useState, useEffect } from "preact/hooks";
 ```
 
 ### 3. Update TypeScript Config
+
 ```json
 {
   "extends": "@packages/typescript/preact.json"
@@ -301,29 +322,33 @@ import { useState, useEffect } from 'preact/hooks';
 ```
 
 ### 4. Update Build Tools
+
 ```typescript
 // vite.config.ts
-import preact from '@preact/preset-vite';
+import preact from "@preact/preset-vite";
 
 export default defineConfig({
-  plugins: [preact()]
+  plugins: [preact()],
 });
 ```
 
 ## Performance Benefits
 
 ### Bundle Size Comparison
+
 ```
 React 19: ~45KB (gzipped)
 Preact:   ~3KB (gzipped)
 ```
 
 ### Memory Usage
+
 - Preact uses less memory due to smaller runtime
 - Faster initial render times
 - Better performance on low-end devices
 
 ### Tree Shaking
+
 - Preact is designed for better tree shaking
 - Unused features are automatically removed
 - Smaller production bundles
@@ -331,27 +356,30 @@ Preact:   ~3KB (gzipped)
 ## Best Practices
 
 ### 1. Use Preact Hooks
+
 ```tsx
 // ✅ Good: Use Preact hooks
-import { useState, useEffect } from 'preact/hooks';
+import { useState, useEffect } from "preact/hooks";
 
 // ❌ Avoid: Import from 'react'
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 ```
 
 ### 2. Leverage React Compatibility
+
 ```tsx
 // ✅ Good: Use React-compatible APIs
-import { createContext, useContext } from 'preact/hooks';
+import { createContext, useContext } from "preact/hooks";
 
 // ✅ Good: Use React 19 features
-import { use, useOptimistic } from 'preact/hooks';
+import { use, useOptimistic } from "preact/hooks";
 ```
 
 ### 3. TypeScript Integration
+
 ```tsx
 // ✅ Good: Use Preact types
-import type { ComponentChildren } from 'preact';
+import type { ComponentChildren } from "preact";
 
 interface Props {
   children: ComponentChildren;
@@ -359,14 +387,13 @@ interface Props {
 ```
 
 ### 4. Event Handling
+
 ```tsx
 // ✅ Good: Use native events (Preact's default)
-<button onClick={(e) => console.log(e.target)}>
-  Click me
-</button>
+<button onClick={(e) => console.log(e.target)}>Click me</button>;
 
 // ✅ Good: Use React-compatible events
-import { createElement } from 'preact/compat';
+import { createElement } from "preact/compat";
 ```
 
 ## Troubleshooting
@@ -374,12 +401,14 @@ import { createElement } from 'preact/compat';
 ### Common Issues
 
 1. **TypeScript Errors**
+
    ```bash
    # Install Preact types
    pnpm add -D @types/preact
    ```
 
 2. **Build Errors**
+
    ```bash
    # Ensure Preact preset is configured
    # Check vite.config.ts or rollup.config.js
@@ -388,10 +417,11 @@ import { createElement } from 'preact/compat';
 3. **Runtime Errors**
    ```tsx
    // Use Preact's error boundary
-   import { ErrorBoundary } from 'preact/compat';
+   import { ErrorBoundary } from "preact/compat";
    ```
 
 ### Debug Commands
+
 ```bash
 # Check Preact version
 pnpm list preact
@@ -406,6 +436,7 @@ pnpm type-check
 ## React 19 Feature Support
 
 ### ✅ Supported Features
+
 - `use` hook for data fetching
 - `useOptimistic` for optimistic updates
 - `useTransition` for non-blocking updates
@@ -414,8 +445,10 @@ pnpm type-check
 - Streaming SSR
 
 ### ⚠️ Limitations
+
 - Some React 19 experimental features may not work
 - Server components require additional setup
 - Some third-party React libraries may need compatibility layer
 
-This setup provides a lightweight, performant alternative to React while maintaining full compatibility with React 19 features and APIs.
+This setup provides a lightweight, performant alternative to React while
+maintaining full compatibility with React 19 features and APIs.

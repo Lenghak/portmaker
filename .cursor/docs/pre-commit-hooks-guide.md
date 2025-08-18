@@ -2,15 +2,19 @@
 
 ## Overview
 
-This guide explains the colorful and meaningful pre-commit hooks in the Lenghak monorepo. These hooks ensure code quality and provide delightful developer experience with colorful terminal output.
+This guide explains the colorful and meaningful pre-commit hooks in the Lenghak
+monorepo. These hooks ensure code quality and provide delightful developer
+experience with colorful terminal output.
 
 ## Terminal Color Support
 
-The pre-commit hooks automatically detect terminal color support and gracefully fall back to plain text when colors are not available.
+The pre-commit hooks automatically detect terminal color support and gracefully
+fall back to plain text when colors are not available.
 
 ### Automatic Color Detection
 
-The hooks use intelligent color detection that works across different environments:
+The hooks use intelligent color detection that works across different
+environments:
 
 - ✅ **Interactive terminals** (most development environments)
 - ✅ **CI/CD environments** (GitHub Actions, GitLab CI, etc.)
@@ -26,6 +30,7 @@ Run the color test script to verify your terminal setup:
 ```
 
 This will show:
+
 - Whether your terminal supports colors
 - Number of available colors
 - Sample colored output
@@ -37,18 +42,22 @@ This will show:
 
 If you see output like `\033[0;32m` instead of colored text:
 
-**Solution**: The hook automatically detects this and disables colors. This is normal for:
+**Solution**: The hook automatically detects this and disables colors. This is
+normal for:
+
 - Non-interactive shells
 - Some CI/CD environments
 - Terminal emulators without color support
 
 #### 2. No Colors in CI/CD
 
-**Expected behavior**: Colors are automatically disabled in CI/CD environments to ensure compatibility.
+**Expected behavior**: Colors are automatically disabled in CI/CD environments
+to ensure compatibility.
 
 #### 3. Colors Not Working in SSH
 
 **Solution**: Ensure your SSH session has proper terminal setup:
+
 ```bash
 # Connect with terminal type
 ssh -t user@host
@@ -64,6 +73,7 @@ export TERM=xterm-256color
 A simple but colorful pre-commit hook that runs Ultracite formatting.
 
 **Features:**
+
 - 🎨 Colorful terminal output (with fallback)
 - ⏱️ Timing information
 - 📊 File count statistics
@@ -71,6 +81,7 @@ A simple but colorful pre-commit hook that runs Ultracite formatting.
 - 🚀 Success celebrations
 
 **Output Example:**
+
 ```
 🚀 Pre-commit hook starting...
 ⚙️ Running Ultracite formatter...
@@ -86,6 +97,7 @@ A simple but colorful pre-commit hook that runs Ultracite formatting.
 A comprehensive pre-commit hook with advanced features and detailed reporting.
 
 **Features:**
+
 - 🎨 Beautiful ASCII art banner (with fallback)
 - 📊 Detailed file analysis
 - ⏱️ Step-by-step timing
@@ -95,6 +107,7 @@ A comprehensive pre-commit hook with advanced features and detailed reporting.
 - 🎉 Celebration messages
 
 **Output Example:**
+
 ```
 ╔══════════════════════════════════════════════════════════════╗
 ║                    PRE-COMMIT HOOK                    ║
@@ -168,12 +181,14 @@ chmod +x .husky/pre-commit-enhanced
 ### 2. Choose Your Hook
 
 **For Simple Setup:**
+
 ```bash
 # Use the basic hook (already active)
 # .husky/pre-commit is the default
 ```
 
 **For Enhanced Experience:**
+
 ```bash
 # Replace with enhanced version
 cp .husky/pre-commit-enhanced .husky/pre-commit
@@ -221,7 +236,7 @@ The enhanced hook includes commented sections for additional checks:
 # Step 2: Run type checking (optional - uncomment if needed)
 # print_colored "${BLUE}${GEAR} ${WHITE}Step 2: Running type checking...${NC}"
 # TYPE_START=$(date +%s)
-# 
+#
 # if pnpm type-check; then
 #     TYPE_END=$(date +%s)
 #     TYPE_DURATION=$((TYPE_END - TYPE_START))
@@ -241,26 +256,29 @@ The enhanced hook includes commented sections for additional checks:
 ### Common Issues
 
 1. **Hook Not Executing**
+
    ```bash
    # Check if hook is executable
    ls -la .husky/pre-commit
-   
+
    # Make executable if needed
    chmod +x .husky/pre-commit
    ```
 
 2. **Colors Not Showing**
+
    ```bash
    # Test color support
    ./scripts/test-colors.sh
-   
+
    # Check terminal type
    echo $TERM
-   
+
    # If colors don't work, the hook will still function
    ```
 
 3. **Performance Issues**
+
    ```bash
    # The hook only processes staged files
    # Large files may take longer to format
@@ -301,7 +319,8 @@ Stage only the files you want to commit to avoid unnecessary processing.
 
 ### 3. Team Communication
 
-Share the hook configuration with your team for consistent development experience.
+Share the hook configuration with your team for consistent development
+experience.
 
 ### 4. Performance Monitoring
 
@@ -353,4 +372,5 @@ Potential improvements for the pre-commit hooks:
 5. **Reporting**: Generate detailed reports for CI/CD
 6. **Advanced Color Support**: Support for 256-color and true color terminals
 
-This setup provides a delightful developer experience with clear, colorful feedback that makes the development process more enjoyable and efficient.
+This setup provides a delightful developer experience with clear, colorful
+feedback that makes the development process more enjoyable and efficient.

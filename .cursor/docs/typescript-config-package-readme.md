@@ -1,6 +1,7 @@
 # @packages/typescript
 
-Shared TypeScript configuration for the Lenghak monorepo supporting multiple frameworks.
+Shared TypeScript configuration for the Lenghak monorepo supporting multiple
+frameworks.
 
 ## Usage
 

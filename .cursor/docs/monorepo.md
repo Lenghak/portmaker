@@ -99,15 +99,14 @@ Apps extend framework configs and add monorepo paths:
 
 ### 1. Local Package Aliases (`@/*`)
 
-**Purpose**: Import files within the same package
-**Scope**: Package-local (no conflicts)
-**Usage**: `import { utils } from '@/utils/helpers'`
+**Purpose**: Import files within the same package **Scope**: Package-local (no
+conflicts) **Usage**: `import { utils } from '@/utils/helpers'`
 
 ### 2. Monorepo Aliases (`@monorepo/*`)
 
-**Purpose**: Import from other packages in the monorepo
-**Scope**: Cross-package (unique naming prevents conflicts)
-**Usage**: `import { Button } from '@monorepo/ui/Button'`
+**Purpose**: Import from other packages in the monorepo **Scope**: Cross-package
+(unique naming prevents conflicts) **Usage**:
+`import { Button } from '@monorepo/ui/Button'`
 
 ### 3. Why This Prevents Conflicts
 
@@ -368,4 +367,5 @@ npx bundle-analyzer dist/stats.json
 npx pnpm why react
 ```
 
-This architecture provides a scalable, maintainable, and performant TypeScript setup for large monorepo applications.
+This architecture provides a scalable, maintainable, and performant TypeScript
+setup for large monorepo applications.

@@ -6,7 +6,8 @@
 
 1. **Ultracite Integration**: Successfully configured with Biome 2.1.4
 2. **Astro Support**: Works with `.astro` files
-3. **Multi-Framework Support**: Ready for React, Vue, Svelte, Qwik, Solid, Angular
+3. **Multi-Framework Support**: Ready for React, Vue, Svelte, Qwik, Solid,
+   Angular
 4. **Monorepo Integration**: Configured with Turbo and PNPM
 5. **Git Hooks**: Integrated with Husky and lint-staged
 
@@ -18,7 +19,7 @@
 // biome.jsonc
 {
   "$schema": "https://biomejs.dev/schemas/latest/schema.json",
-  "extends": ["ultracite"]
+  "extends": ["ultracite"],
 }
 ```
 
@@ -216,4 +217,5 @@ npx ultracite lint packages/ui/src/Button.tsx
 4. **Customize Rules**: Add project-specific rules if needed
 5. **Team Onboarding**: Share configuration with team members
 
-This setup provides a robust, performant, and maintainable solution for formatting and linting your diverse Astro-based monorepo!
+This setup provides a robust, performant, and maintainable solution for
+formatting and linting your diverse Astro-based monorepo!

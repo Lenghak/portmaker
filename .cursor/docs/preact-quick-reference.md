@@ -3,6 +3,7 @@
 ## 🚀 Quick Setup
 
 ### Install Dependencies
+
 ```bash
 # For Preact applications
 pnpm add preact preact-render-to-string
@@ -14,6 +15,7 @@ pnpm add -D @types/preact
 ```
 
 ### TypeScript Configuration
+
 ```json
 // For applications
 {
@@ -27,42 +29,41 @@ pnpm add -D @types/preact
 ```
 
 ### Vite Configuration
+
 ```typescript
 // vite.config.ts
-import { defineConfig } from 'vite';
-import preact from '@preact/preset-vite';
+import { defineConfig } from "vite";
+import preact from "@preact/preset-vite";
 
 export default defineConfig({
   plugins: [preact()],
   resolve: {
     alias: {
-      'react': 'preact/compat',
-      'react-dom': 'preact/compat'
-    }
-  }
+      react: "preact/compat",
+      "react-dom": "preact/compat",
+    },
+  },
 });
 ```
 
 ## 📝 Component Examples
 
 ### Basic Component
+
 ```tsx
-import { useState } from 'preact/hooks';
+import { useState } from "preact/hooks";
 
 export default function Counter() {
   const [count, setCount] = useState(0);
-  
-  return (
-    <button onClick={() => setCount(count + 1)}>
-      Count: {count}
-    </button>
-  );
+
+  return <button onClick={() => setCount(count + 1)}>Count: {count}</button>;
 }
 ```
 
 ### React 19 Features
+
 ```tsx
-import { use, useOptimistic, useTransition } from 'preact/hooks';
+import { use, useOptimistic, useTransition } from "preact/hooks";
 
 // use hook for data fetching
 function UserProfile({ userPromise }) {
@@ -77,14 +78,14 @@ function TodoList() {
     todos,
     (state, newTodo) => [...state, newTodo]
   );
-  
+
   const [isPending, startTransition] = useTransition();
-  
+
   const addTodo = async (todo) => {
     addOptimisticTodo(todo);
     startTransition(async () => {
       await saveTodo(todo);
-      setTodos(prev => [...prev, todo]);
+      setTodos((prev) => [...prev, todo]);
     });
   };
 }
@@ -93,25 +94,27 @@ function TodoList() {
 ## 🔧 Astro Integration
 
 ### Astro Config
+
 ```typescript
 // astro.config.mjs
-import { defineConfig } from 'astro/config';
-import preact from '@astrojs/preact';
+import { defineConfig } from "astro/config";
+import preact from "@astrojs/preact";
 
 export default defineConfig({
   integrations: [
     preact({
-      include: ['**/*.{tsx,jsx}'],
-      exclude: ['**/*.react.{tsx,jsx}']
-    })
-  ]
+      include: ["**/*.{tsx,jsx}"],
+      exclude: ["**/*.react.{tsx,jsx}"],
+    }),
+  ],
 });
 ```
 
 ### Using in Astro
+
 ```astro
 ---
-import PreactComponent from '../components/PreactComponent';
+import PreactComponent from "../components/PreactComponent";
 ---
 
 <PreactComponent title="Hello from Preact!" client:load />
@@ -120,6 +123,7 @@ import PreactComponent from '../components/PreactComponent';
 ## 📦 Package.json Examples
 
 ### Application
+
 ```json
 {
   "dependencies": {
@@ -134,6 +138,7 @@ import PreactComponent from '../components/PreactComponent';
 ```
 
 ### Library
+
 ```json
 {
   "dependencies": {
@@ -165,6 +170,9 @@ import PreactComponent from '../components/PreactComponent';
 
 ## 📚 Documentation
 
-- **[Complete Guide](./preact-react19-compatibility-guide.md)** - Full Preact + React 19 guide
-- **[Ultracite Setup](./ultracite-astro-multi-framework-setup.md)** - Ultracite with Preact
-- **[TypeScript Config](./typescript-config-package-readme.md)** - TypeScript configurations
+- **[Complete Guide](./preact-react19-compatibility-guide.md)** - Full Preact +
+  React 19 guide
+- **[Ultracite Setup](./ultracite-astro-multi-framework-setup.md)** - Ultracite
+  with Preact
+- **[TypeScript Config](./typescript-config-package-readme.md)** - TypeScript
+  configurations

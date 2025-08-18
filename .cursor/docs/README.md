@@ -1,31 +1,42 @@
 # Lenghak Monorepo Documentation
 
-This directory contains comprehensive documentation for the Lenghak monorepo setup, configuration, and best practices.
+This directory contains comprehensive documentation for the Lenghak monorepo
+setup, configuration, and best practices.
 
 ## 📚 Documentation Index
 
 ### 🚀 Ultracite & Biome Configuration
 
-- **[ultracite-astro-multi-framework-setup.md](./ultracite-astro-multi-framework-setup.md)** - Complete guide for using Ultracite with Astro and multiple frameworks (React, Vue, Svelte, Qwik, Solid, Angular)
-- **[ultracite-configuration-summary.md](./ultracite-configuration-summary.md)** - Summary of current Ultracite setup, commands, and features
+- **[ultracite-astro-multi-framework-setup.md](./ultracite-astro-multi-framework-setup.md)** -
+  Complete guide for using Ultracite with Astro and multiple frameworks (React,
+  Vue, Svelte, Qwik, Solid, Angular)
+- **[ultracite-configuration-summary.md](./ultracite-configuration-summary.md)** -
+  Summary of current Ultracite setup, commands, and features
 
 ### 🔧 TypeScript Configuration
 
-- **[typescript-config-package-readme.md](./typescript-config-package-readme.md)** - Documentation for the shared TypeScript configuration package
+- **[typescript-config-package-readme.md](./typescript-config-package-readme.md)** -
+  Documentation for the shared TypeScript configuration package
 
 ### ⚡ Preact & React 19
 
-- **[preact-react19-compatibility-guide.md](./preact-react19-compatibility-guide.md)** - Complete guide for Preact with React 19 compatibility, performance benefits, and migration strategies
-- **[preact-quick-reference.md](./preact-quick-reference.md)** - Quick setup and usage reference for Preact
+- **[preact-react19-compatibility-guide.md](./preact-react19-compatibility-guide.md)** -
+  Complete guide for Preact with React 19 compatibility, performance benefits,
+  and migration strategies
+- **[preact-quick-reference.md](./preact-quick-reference.md)** - Quick setup and
+  usage reference for Preact
 
 ### 🎨 Development Experience
 
-- **[pre-commit-hooks-guide.md](./pre-commit-hooks-guide.md)** - Colorful and meaningful pre-commit hooks with enhanced developer experience
+- **[pre-commit-hooks-guide.md](./pre-commit-hooks-guide.md)** - Colorful and
+  meaningful pre-commit hooks with enhanced developer experience
 
 ### 📋 Rules & Guidelines
 
-- **[../rules/ultracite.mdc](../rules/ultracite.mdc)** - Ultracite rules and coding standards
-- **[../rules/monorepo.mdc](../rules/monorepo.mdc)** - TypeScript monorepo architecture and best practices
+- **[../rules/ultracite.mdc](../rules/ultracite.mdc)** - Ultracite rules and
+  coding standards
+- **[../rules/monorepo.mdc](../rules/monorepo.mdc)** - TypeScript monorepo
+  architecture and best practices
 
 ## 🎯 Quick Reference
 

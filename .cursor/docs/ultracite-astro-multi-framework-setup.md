@@ -2,7 +2,8 @@
 
 ## What is Ultracite?
 
-Ultracite is an AI-ready formatter and linter that uses Biome under the hood to provide:
+Ultracite is an AI-ready formatter and linter that uses Biome under the hood to
+provide:
 
 - **Zero configuration required** - Works out of the box
 - **Subsecond performance** - Lightning-fast formatting and linting
@@ -16,7 +17,8 @@ Ultracite is an AI-ready formatter and linter that uses Biome under the hood to 
 Ultracite extends Biome's capabilities and works seamlessly with Astro projects:
 
 1. **Astro Files (.astro)**: Ultracite can format and lint Astro component files
-2. **Framework Components**: Supports React, Preact, Vue, Svelte, Qwik, Solid, and Angular components within Astro
+2. **Framework Components**: Supports React, Preact, Vue, Svelte, Qwik, Solid,
+   and Angular components within Astro
 3. **TypeScript/JavaScript**: Full support for TS/JS files in your Astro project
 4. **CSS/SCSS**: Formats stylesheets
 5. **JSON/JSONC**: Handles configuration files
@@ -27,7 +29,7 @@ Ultracite extends Biome's capabilities and works seamlessly with Astro projects:
 // biome.jsonc
 {
   "$schema": "https://biomejs.dev/schemas/latest/schema.json",
-  "extends": ["ultracite"]
+  "extends": ["ultracite"],
 }
 ```
 
@@ -316,7 +318,7 @@ npx ultracite lint src/pages/index.astro
 // biome.jsonc (root)
 {
   "$schema": "https://biomejs.dev/schemas/latest/schema.json",
-  "extends": ["ultracite"]
+  "extends": ["ultracite"],
 }
 ```
 
@@ -330,8 +332,8 @@ Individual packages can have their own configurations:
   "$schema": "https://biomejs.dev/schemas/latest/schema.json",
   "extends": ["ultracite"],
   "files": {
-    "ignore": ["dist/**", "node_modules/**"]
-  }
+    "ignore": ["dist/**", "node_modules/**"],
+  },
 }
 ```
 
@@ -343,8 +345,8 @@ Individual packages can have their own configurations:
   "$schema": "https://biomejs.dev/schemas/latest/schema.json",
   "extends": ["ultracite"],
   "files": {
-    "ignore": [".astro/**", "dist/**"]
-  }
+    "ignore": [".astro/**", "dist/**"],
+  },
 }
 ```
 
@@ -426,13 +428,13 @@ export default defineConfig({
     react(),
     preact({
       include: ["**/*.{tsx,jsx}"],
-      exclude: ["**/*.react.{tsx,jsx}"] // Exclude React-specific files
+      exclude: ["**/*.react.{tsx,jsx}"], // Exclude React-specific files
     }),
     vue(),
     svelte(),
     qwik(),
     solid(),
-    angular()
+    angular(),
   ],
   // Ultracite will handle formatting for all these frameworks
 });
@@ -558,12 +560,10 @@ Ultracite uses Biome's caching system for optimal performance:
 ### Common Issues
 
 1. **Astro files not formatting**
-
    - Ensure `.astro` files are not in ignore patterns
    - Check file permissions
 
 2. **Framework-specific syntax errors**
-
    - Verify framework integrations are installed
    - Check TypeScript configuration
 
@@ -606,4 +606,5 @@ pnpm add -D ultracite
 # Update scripts to use Ultracite for formatting
 ```
 
-This setup provides a comprehensive, performant, and maintainable solution for formatting and linting Astro projects with multiple frameworks using Ultracite.
+This setup provides a comprehensive, performant, and maintainable solution for
+formatting and linting Astro projects with multiple frameworks using Ultracite.
