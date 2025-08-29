@@ -1,11 +1,11 @@
 import {
   Accordion,
+  AccordionContent,
   AccordionItem,
   AccordionTrigger,
-  AccordionContent,
-} from "@packages/react";
+} from "@packages/react/components/accordion";
 
-export function Home() {
+export function AccordionDemo() {
   return (
     <Accordion defaultValue={["React"]} collapsible multiple>
       {["React", "Solid", "Vue", "Svelte"].map((item) => (

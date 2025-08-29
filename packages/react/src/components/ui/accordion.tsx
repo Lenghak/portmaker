@@ -12,9 +12,10 @@ import {
   useAccordionContext,
   useAccordionItemContext,
 } from "@ark-ui/react/accordion";
-import { cn } from "@packages/utils";
 import { CaretDownIcon } from "@phosphor-icons/react/CaretDown";
 import type React from "react";
+
+import { cn } from "@packages/utils";
 
 function Accordion({
   ...props
@@ -78,16 +79,16 @@ export {
   // Styled components
   Accordion,
   AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
   // Raw Ark UI primitives
   AccordionContext,
+  AccordionItem,
   AccordionItemContext,
   AccordionRootProvider,
+  AccordionTrigger,
+  // Utilities
+  accordionAnatomy,
   // Hooks
   useAccordion,
   useAccordionContext,
   useAccordionItemContext,
-  // Utilities
-  accordionAnatomy,
 };

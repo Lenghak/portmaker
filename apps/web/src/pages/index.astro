@@ -1,15 +1,26 @@
 ---
 import "@/styles/globals.css";
-import {
-  Accordion,
-  AccordionItem,
-  AccordionTrigger,
-  AccordionContent,
-} from "@packages/react";
 import RootLayout from "@/layouts/root.layout.astro";
-import { Home } from "@/domains/home/react/accordion";
+import { AccordionDemo } from "@/domains/home/react/accordion";
+import { AvatarDemo } from "@/domains/home/react/avatar-demo";
+import { ButtonDemo } from "@/domains/home/react/button";
 ---
 
 <RootLayout>
-  <Home client:load />
+  <div class="space-y-8">
+    <section>
+      <h2 class="mb-4 text-2xl font-bold">Avatar Component</h2>
+      <AvatarDemo client:load />
+    </section>
+
+    <section>
+      <h2 class="mb-4 text-2xl font-bold">Button Component</h2>
+      <ButtonDemo client:load />
+    </section>
+
+    <section>
+      <h2 class="mb-4 text-2xl font-bold">Accordion Component</h2>
+      <AccordionDemo client:load />
+    </section>
+  </div>
 </RootLayout>
