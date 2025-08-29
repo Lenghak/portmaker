@@ -2,8 +2,11 @@
 import { PUBLIC_APP_NAME } from "astro:env/client";
 import { ClientRouter } from "astro:transitions";
 import { cn } from "@packages/utils/cn";
+import type { HTMLAttributes } from "astro/types";
 
-const { className, ...props } = Astro.props;
+interface Props extends HTMLAttributes<"div"> {}
+
+const { class: className, children, ...props } = Astro.props;
 ---
 
 <script is:inline>

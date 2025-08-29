@@ -1,5 +1,5 @@
 import node from "@astrojs/node";
-import preact from "@astrojs/preact";
+import react from "@astrojs/react";
 import solidJs from "@astrojs/solid-js";
 import svelte from "@astrojs/svelte";
 import vercel from "@astrojs/vercel";
@@ -11,18 +11,17 @@ import typesafeRoutes from "astro-typesafe-routes";
 // https://astro.build/config
 export default defineConfig({
   integrations: [
-    preact({
-      include: ["@packages/react"],
-      compat: true,
+    react({
+      include: ["@packages/react", "**/*/react/**/*.tsx"],
     }),
     vue({
-      include: ["@packages/vue"],
+      include: ["@packages/vue", "**/*/vue/**/*.vue"],
     }),
     svelte({
-      include: ["@packages/svelte"],
+      include: ["@packages/svelte", "**/*/svelte/**/*.svelte"],
     }),
     solidJs({
-      include: ["@packages/solid"],
+      include: ["@packages/solid", "**/*/solid/**/*.tsx"],
     }),
     typesafeRoutes(),
   ],

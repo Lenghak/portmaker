@@ -2,7 +2,7 @@
   "name": "@packages/react",
   "version": "1.0.0",
   "dependencies": {
-    "@ark-ui/react": "^5.19.0",
+    "@ark-ui/react": "^5.22.0",
     "@nanostores/react": "^1.0.0",
     "@packages/utils": "workspace:*",
     "@phosphor-icons/react": "^2.1.10",
@@ -16,8 +16,8 @@
   "devDependencies": {
     "@packages/typescript": "workspace:*",
     "@types/node": "^24.3.0",
-    "@types/react": "^19.1.10",
-    "@types/react-dom": "^19.1.7",
+    "@types/react": "^19.1.12",
+    "@types/react-dom": "^19.1.9",
     "react": "npm:@preact/compat@^18.3.1",
     "react-dom": "npm:@preact/compat@^18.3.1",
     "typescript": "^5.9.2"

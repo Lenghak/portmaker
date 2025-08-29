@@ -1,7 +1,15 @@
 ---
 import "@/styles/globals.css";
-
+import {
+  Accordion,
+  AccordionItem,
+  AccordionTrigger,
+  AccordionContent,
+} from "@packages/react";
 import RootLayout from "@/layouts/root.layout.astro";
+import { Home } from "@/domains/home/react/accordion";
 ---
 
-<RootLayout />
+<RootLayout>
+  <Home client:load />
+</RootLayout>

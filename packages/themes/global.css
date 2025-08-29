@@ -111,6 +111,32 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+
+  /* Accordion Animations */
+  --animate-slide-down: slideDown 250ms ease-in-out;
+  --animate-slide-up: slideUp 200ms ease-in-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0.01;
+    height: 0;
+  }
+  to {
+    opacity: 1;
+    height: var(--height);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 1;
+    height: var(--height);
+  }
+  to {
+    opacity: 0.01;
+    height: 0;
+  }
 }
 
 @layer base {
