@@ -5,8 +5,8 @@ import svelte from "@astrojs/svelte";
 import vercel from "@astrojs/vercel";
 import vue from "@astrojs/vue";
 import tailwindcss from "@tailwindcss/vite";
-import { defineConfig, envField } from "astro/config";
 import typesafeRoutes from "astro-typesafe-routes";
+import { defineConfig, envField } from "astro/config";
 
 // https://astro.build/config
 export default defineConfig({

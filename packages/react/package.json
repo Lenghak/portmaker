@@ -25,6 +25,9 @@
   "exports": {
     ".": "./src/index.ts",
     "./components": "./src/components/index.ts",
+    "./components/accordion": "./src/components/ui/accordion.tsx",
+    "./components/avatar": "./src/components/ui/avatar.tsx",
+    "./components/button": "./src/components/ui/button.tsx",
     "./lib": "./src/lib/index.ts",
     "./lib/cn": "./src/lib/cn.ts"
   },
